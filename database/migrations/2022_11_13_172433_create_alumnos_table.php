@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('alumnos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('nombre', 70);
+            $table->integer('horasServicio');
+            $table->string('laboratorio', 50);
         });
     }
 
