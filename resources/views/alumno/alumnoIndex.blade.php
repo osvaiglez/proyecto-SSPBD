@@ -1,3 +1,5 @@
+<!-- CÓDIGO EN SECO
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -54,6 +56,9 @@
     </ul>
 </body>
 </html>
+-->
+
+
 
 <!DOCTYPE html>
 <html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
@@ -913,6 +918,13 @@
                   </tbody>
                   @endforeach
                 </table>
+                <div class="px-6 my-6">
+                <a href="/alumno/create"
+                  class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                > 
+                Añadir nuevo alumno
+              </a>
+              </div>
               </div>
                   <nav aria-label="Table navigation">
                     <ul class="inline-flex items-center">

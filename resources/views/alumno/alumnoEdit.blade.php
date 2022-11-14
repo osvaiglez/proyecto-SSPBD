@@ -17,8 +17,9 @@
             </ul>
         </div>
     @endif
-    <form action="/alumno" method="POST">
+    <form action="/alumno/{{$alumno->id}}" method="POST">
     @csrf
+    @method('patch')
         <label for="nombre">Nombre del alumno</label>
         <input type="text" name="nombre" id="nombre" value="{{ old('nombre') ?? $alumno->nombre}}">
       
@@ -35,3 +36,5 @@
     </form>
 </body>
 </html>
+
+

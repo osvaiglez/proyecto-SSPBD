@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('encargado_lab', function (Blueprint $table) {
+        Schema::create('encargado', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('nombre', 70);
         });
     }
 
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('encargado_lab');
+        Schema::dropIfExists('encargado');
     }
 };
