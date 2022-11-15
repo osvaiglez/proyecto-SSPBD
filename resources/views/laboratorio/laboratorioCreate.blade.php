@@ -551,6 +551,15 @@
             >
             <form action="/laboratorio" method="POST">
             @csrf
+            @if ($errors->any()) 
+                <div>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
             <label class="block mt-4 text-sm" for="nombre">
                 <span class="text-gray-700 dark:text-gray-400">Nombre</span>
@@ -560,17 +569,17 @@
                 />
               </label>
 
-            <label class="block mt-4 text-sm" for="encargado_nombre">
+              <label class="block mt-4 text-sm" for="nombre_encargado">
                 <span class="text-gray-700 dark:text-gray-400">Encargado</span>
-                <input type="text" name="encargado_nombre" id="encargado_nombre" value="{{ old('encargado_nombre') }}"
+                <input type="text" name="nombre_encargado" id="nombre_encargado" value="{{ old('nombre_encargado') }}"
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                   placeholder="Nombre de Encargado asignado"
                 />
               </label>
 
-              <label class="block mt-4 text-sm" for="almacen_nombre">
+              <label class="block mt-4 text-sm" for="nombre_almacen">
                 <span class="text-gray-700 dark:text-gray-400">Almacén</span>
-                <input type="text" name="almacen_nombre" id="almacen_nombre" value="{{ old('almacen_nombre') }}"
+                <input type="text" name="nombre_almacen" id="nombre_almacen" value="{{ old('nombre_almacen') }}"
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                   placeholder="Nombre de Almacén asignado"
                 />
@@ -581,5 +590,4 @@
                 class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
                 </div>
             </form>
-
-            </div>
+          </div>

@@ -50,6 +50,9 @@ class LaboratorioController extends Controller
         //Validar
         $request->validate([
             'nombre' => 'required|max:70',
+            'nombre_encargado' => 'required|max:70',
+            'nombre_almacen' => 'required|max:20',
+            
         ]);
         //Insertar en BD
         //Usa el modelo para mandar informacion a la base de datos
@@ -90,7 +93,9 @@ class LaboratorioController extends Controller
     public function update(Request $request, Laboratorio $laboratorio)
     {
         $request->validate([
-            'nombre' => 'required|max:30',
+            'nombre' => 'required|max:70',
+            'nombre_encargado' => 'required|max:70',
+            'nombre_almacen' => 'required|max:20',
         ]);
 
         Laboratorio::where('id',$laboratorio->id)->update($request->except('_token', '_method'));

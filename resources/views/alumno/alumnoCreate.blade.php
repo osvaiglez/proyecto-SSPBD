@@ -1,44 +1,4 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Alumno</title>
-</head>
-<body>
-    <h1>Formulario de Alumno</h1>
-    @if ($errors->any()) 
-        <div>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-    
-    <form action="/alumno" method="POST">
-        @csrf
-        <label for="nombre">Nombre del alumno</label>
-        <input type="text" name="nombre" id="nombre" value="{{ old('nombre') }}">
-        <br>
-
-        <label for="horasServicio">Horas de Servicio</label>
-        <input type="number" name="horasServicio" id="horasServicio" value="{{ old('horasServicio') }}">
-        <br>
-
-        <label for="laboratorio">Laboratorio asignado</label>
-        <input type="text" name="laboratorio" id="laboratorio" value="{{ old('laboratorio') }}">
-        <br>
-
-        <input type="submit" value="Enviar">
-
-    </form>
-</body>
-</html>
-
-<!DOCTYPE html>
 <html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -583,36 +543,46 @@
             <h2
               class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
             >
-              Formulario Laboratorio
+              Formulario Alumno
             </h2>
 
             <div
               class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800"
             >
-            <form action="/laboratorio" method="POST">
+            <form action="/alumno" method="POST">
             @csrf
+
+            @if ($errors->any()) 
+                <div>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
             <label class="block mt-4 text-sm" for="nombre">
                 <span class="text-gray-700 dark:text-gray-400">Nombre</span>
                 <input type="text" name="nombre" id="nombre" value="{{ old('nombre') }}"
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                  placeholder="Nombre del Laboratorio"
+                  placeholder="Nombre del Alumno"
                 />
               </label>
 
-            <label class="block mt-4 text-sm" for="encargado_nombre">
-                <span class="text-gray-700 dark:text-gray-400">Encargado</span>
-                <input type="text" name="encargado_nombre" id="encargado_nombre" value="{{ old('encargado_nombre') }}"
+            <label class="block mt-4 text-sm" for="horasServicio">
+                <span class="text-gray-700 dark:text-gray-400">Horas de Servicio</span>
+                <input type="number" name="horasServicio" id="horasServicio" value="{{ old('horasServicio') }}"
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                  placeholder="Nombre de Encargado asignado"
+                  placeholder="Horas de Servicio a cumplir"
                 />
               </label>
 
-              <label class="block mt-4 text-sm" for="almacen_nombre">
-                <span class="text-gray-700 dark:text-gray-400">Almacén</span>
-                <input type="text" name="almacen_nombre" id="almacen_nombre" value="{{ old('almacen_nombre') }}"
+              <label class="block mt-4 text-sm" for="laboratorio">
+                <span class="text-gray-700 dark:text-gray-400">Laboratorio</span>
+                <input type="text" name="laboratorio" id="laboratorio" value="{{ old('laboratorio') }}"
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                  placeholder="Nombre de Almacén asignado"
+                  placeholder="Laboratorio asignado al alumno"
                 />
               </label>
 

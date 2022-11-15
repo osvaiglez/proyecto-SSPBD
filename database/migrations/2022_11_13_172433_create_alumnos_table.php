@@ -18,7 +18,8 @@ return new class extends Migration
             $table->timestamps();
             $table->string('nombre', 70);
             $table->integer('horasServicio');
-            $table->string('laboratorio', 50);
+            $table->string('laboratorio', 20);
+            $table->string('estado', 20);
         });
     }
 

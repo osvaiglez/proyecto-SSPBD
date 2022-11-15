@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('laboratorios', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('encargado_id')->constrained()->onDelete('cascade');
-            $table->foreignId('almacen_id')->constrained()->onDelete('cascade');
             $table->string('nombre', 20);
+            $table->string('nombre_encargado', 70);
+            $table->string('nombre_almacen', 20);
         });
     }
 

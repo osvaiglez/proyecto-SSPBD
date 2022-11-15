@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('tipo', 30);
             $table->integer('cantidad');
             $table->string('fechacreacion', 30);
-            $table->foreignId('almacen_id')->constrained('almacens');
+            $table->string('nombre_almacen', 20);
         });
     }
 
