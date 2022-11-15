@@ -7,13 +7,11 @@
     <title>Mostrar</title>
 </head>
 <body>
-    <h1>Detalles del alumno</h1>
+    <h1>Detalles del almacen</h1>
 
-    <h2>{{ $alumno->nombre }}</h2>
-    <h2>{{ $alumno->horasServicio }}</h2>
-    <h2>{{ $alumno->laboratorio }}</h2>
+    <h2>{{ $almacen->nombre }}</h2>
+
     <br>
     <a href="/alumno">Regresar al listado</a>
 </body>
 </html>
-

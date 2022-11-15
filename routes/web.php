@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\EncargadoController;
 use App\Http\Controllers\ObjetoController;
+use App\Http\Controllers\AlmacenController;
+use App\Http\Controllers\LaboratorioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +22,8 @@ use App\Http\Controllers\ObjetoController;
 Route::resource('alumno', AlumnoController::class);
 Route::resource('encargado', EncargadoController::class);
 Route::resource('objeto', ObjetoController::class);
+Route::resource('almacen', AlmacenController::class);
+Route::resource('laboratorio', LaboratorioController::class);
 
 Route::get('/', function () {
     return view('welcome');

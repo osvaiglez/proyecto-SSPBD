@@ -12,6 +12,6 @@
     <h2>{{ $encargado->nombre }}</h2>
 
     <br>
-    <a href="/tank">Regresar al listado</a>
+    <a href="/encargado">Regresar al listado</a>
 </body>
 </html>

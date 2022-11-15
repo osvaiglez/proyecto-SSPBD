@@ -543,7 +543,7 @@
             <h2
               class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
             >
-              Listado de encargados registrados
+              Listado de laboratorios registrados
             </h2>
           
             <!-- With actions -->
@@ -555,12 +555,14 @@
                     <tr
                       class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
                     >
-                      <th class="px-4 py-3">Nombre de encargado</th>
+                      <th class="px-4 py-3">Nombre de laboratorio</th>
+                      <th class="px-4 py-3">Encargado</th>
+                      <th class="px-4 py-3">Almacen</th>
                       <th class="px-4 py-3">Acciones</th>
                     </tr>
                   </thead>
 
-                  @foreach ($encargados as $encargado)
+                  @foreach ($laboratorios as $laboratorio)
                   <tbody
                     class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
                   >
@@ -571,17 +573,25 @@
                           <!-- Avatar with inset shadow -->
                           <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
                             <div>
-                                <a>{{ $encargado->nombre }}</a>
+                                <a>{{ $laboratorio->nombre }}</a>
                             </div>
                           </div>
                           <div>
+
+                          <td class="px-4 py-3 text-sm">
+                            <a>{{ $laboratorio->nombre_encargado }} </a>
+                          </td>
+
+                          <td class="px-4 py-3 text-sm">
+                            <a>{{ $laboratorio->nombre_almacen }} </a>
+                          </td>
                             
                           </div>
                         </div>
-                      </td> 
+                      </td>
                       <td class="px-4 py-3">
                         <div class="flex items-center space-x-4 text-sm">
-                          <button onclick="window.location.href='/encargado/{{ $encargado->id }}/edit'"
+                          <button onclick="window.location.href='/laboratorio/{{ $laboratorio->id }}/edit'"
                             class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
                             aria-label="Edit" 
                           >
@@ -596,7 +606,7 @@
                               ></path>
                             </svg>
                           </button>
-                          <form action="/encargado/{{ $encargado->id }}" method="POST">
+                          <form action="/laboratorio/{{ $laboratorio->id }}" method="POST">
                             <button
                                 class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
                                 aria-label="Delete" 
@@ -631,10 +641,10 @@
                   @endforeach
                 </table>
                 <div class="px-6 my-6">
-                <a href="/encargado/create"
+                <a href="/laboratorio/create"
                   class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
                 > 
-                Añadir nuevo encargado
+                Añadir nuevo laboratorio
               </a>
               </div>
               </div>

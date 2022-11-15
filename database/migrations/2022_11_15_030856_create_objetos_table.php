@@ -13,10 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('encargado', function (Blueprint $table) {
+        Schema::create('objetos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('nombre', 70);
+            $table->string('tipo', 30);
+            $table->integer('cantidad');
+            $table->string('fechacreacion', 30);
+            $table->foreignId('almacen_id')->constrained('almacens');
         });
     }
 
@@ -27,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('encargado');
+        Schema::dropIfExists('objetos');
     }
 };
