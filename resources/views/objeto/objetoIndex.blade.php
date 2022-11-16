@@ -579,7 +579,7 @@
                       <th class="px-4 py-3">Nombre del material</th>
                       <th class="px-4 py-3">Tipo</th>
                       <th class="px-4 py-3">Cantidad</th>
-                      <th class="px-4 py-3">Fecha de Creación</th>
+                      <th class="px-4 py-3">Almacén</th>
                       <th class="px-4 py-3">Acciones</th>
                     </tr>
                   </thead>
@@ -612,7 +612,7 @@
 
                       </td>
                       <td class="px-4 py-3 text-sm">
-                      <a>{{ $objeto->fechacreacion }}</a>
+                      <a>{{ $objeto->nombre_almacen }}</a>
                       </td>
                       <td class="px-4 py-3">
                         <div class="flex items-center space-x-4 text-sm">
