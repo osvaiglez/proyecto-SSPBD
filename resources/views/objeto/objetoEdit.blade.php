@@ -573,6 +573,7 @@
             >
             <form action="/objeto/{{$objeto->id}}" method="POST">
             @csrf
+            @method('patch')
 
             @if ($errors->any()) 
                 <div>
