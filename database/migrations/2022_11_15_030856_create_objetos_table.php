@@ -18,8 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('nombre', 70);
             $table->string('tipo', 30);
-            $table->integer('cantidad');
-            $table->string('fechacreacion', 30);
+            $table->string('cantidad', 30);
             $table->string('nombre_almacen', 20);
         });
     }

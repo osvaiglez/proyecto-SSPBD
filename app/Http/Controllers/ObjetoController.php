@@ -52,7 +52,8 @@ class objetoController extends Controller
             'nombre' => 'required|max:70',
             'tipo' => 'required|max:30',
             'cantidad' => 'required|max:30',
-            'fechacreacion' => 'max:20',
+            'nombre_almacen' => 'required|max:30',
+
         ]);
         //Insertar en BD
         //Usa el modelo para mandar informacion a la base de datos
@@ -96,7 +97,7 @@ class objetoController extends Controller
             'nombre' => 'required|max:70',
             'tipo' => 'required|max:30',
             'cantidad' => 'required|max:30',
-            'fechacreacion',
+            'nombre_almacen' => 'required|max:30',
         ]);
 
         Objeto::where('id',$objeto->id)->update($request->except('_token', '_method'));
